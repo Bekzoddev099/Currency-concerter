@@ -9,6 +9,10 @@ class Currency
     public function exchange(float|int $amount, string $from, string $to): float|int
     {
         $currencies = $this->customCurrencies();
+        
+        
+        $currencies['UZS'] = 1;
+
         if (!isset($currencies[$from]) || !isset($currencies[$to])) {
             throw new Exception("Invalid currency code.");
         }
@@ -34,7 +38,8 @@ class Currency
         foreach ($currencies as $currency) {
             $orderedCurrencies[$currency->Ccy] = $currency->Rate;
         }
-
+        
+        $orderedCurrencies['UZS'] = 1;
         return $orderedCurrencies;
     }
 }
