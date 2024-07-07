@@ -16,7 +16,7 @@ class Currency
         $fromRate = $currencies[$from];
         $toRate = $currencies[$to];
         
-        // Convert the amount to UZS first, then to the target currency
+    
         $amountInUzs = $amount * $fromRate;
         return $amountInUzs / $toRate;
     }
@@ -38,3 +38,4 @@ class Currency
         return $orderedCurrencies;
     }
 }
+?>
